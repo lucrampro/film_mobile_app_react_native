@@ -21,7 +21,7 @@ const Home = () => {
     <View>
       <FlatList
         data={movieCollection}
-        renderItem={({item}) => <RowCollectionMovies title={item.name}></RowCollectionMovies>}
+        renderItem={({item}) => <RowCollectionMovies title={item.name} id_collection={item.id}></RowCollectionMovies>}
         keyExtractor={(item,i) => i.toString()}
       />
     </View>
