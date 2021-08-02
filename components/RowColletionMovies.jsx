@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Text, FlatList } from 'react-native';
+import { MovieCard } from './'
 import Network from '../network'
 
 const RowColletionMovies = ({ title, id_collection }) => {
@@ -10,7 +11,7 @@ const RowColletionMovies = ({ title, id_collection }) => {
       let value = await network.getMoviesListsWithCollectionID(id_collection);
       setCollectionMovie(value);
     })()
-  });
+  },[]);
 
   return (
     <View style={styles.row}>
@@ -18,17 +19,14 @@ const RowColletionMovies = ({ title, id_collection }) => {
       <FlatList
         horizontal={true}
         data={collectionMovie}
-        renderItem={({item}) => <Text style={styles.title}> {item.title}</Text>}
+        renderItem={({item}) => <MovieCard img_path={item.backdrop_path} title={item.title}/>}
+        // renderItem={({item}) => <Text style={styles.title}> {item.title}</Text>}
         keyExtractor={(item,i) => i.toString()}
       />
     </View>
   );
 }
 const styles = StyleSheet.create({
-  row: {
-    borderColor: '#fff',
-    borderWidth: 1,
-  },
   title: {
     color: '#fff'
   }
