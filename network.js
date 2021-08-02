@@ -10,9 +10,11 @@ export default class Network {
   }
 
   getMoviesCollections() {
-    this.axiosGetRequest(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.api_key}&language=fr`)
+    return this.axiosGetRequest(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.api_key}&language=fr`)
       .then( response => {
-        console.log(response.data.genres);
+        const genres = response.data.genres;
+        // console.log(genres);
+        return genres
       })
   }
 

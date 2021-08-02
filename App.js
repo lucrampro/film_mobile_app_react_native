@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import { RowCollectionMovies } from './components'
+import { Home } from './components'
 export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-        <RowCollectionMovies></RowCollectionMovies>
+        <Home/>
         <StatusBar style="auto" />
     </SafeAreaView>
   );
