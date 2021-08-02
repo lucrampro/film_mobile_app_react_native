@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, FlatList, Text } from 'react-native';
+import { View, FlatList, StyleSheet } from 'react-native';
 import { RowCollectionMovies } from './'
 import Network from '../network'
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
 
 
   return (
-    <View>
+    <View style={styles.wrapper}>
       <FlatList
         data={movieCollection}
         renderItem={({item}) => <RowCollectionMovies title={item.name} id_collection={item.id}></RowCollectionMovies>}
@@ -27,5 +27,11 @@ const Home = () => {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  wrapper: {
+    padding: 10
+  }
+})
 
 export default Home;

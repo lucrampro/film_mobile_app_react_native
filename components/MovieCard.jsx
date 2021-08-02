@@ -24,11 +24,14 @@ const styles = StyleSheet.create({
     width: 120,
     height: 200,
     resizeMode: 'cover',
-    marginBottom: 10
+    marginBottom: 10,
+    borderRadius: 5,
   },
   title: {
     color: '#ffffff',
-    width: 120
+    width: 120,
+    overflow: 'hidden',
+    height: 20
   }
 })
 export default MovieCard;

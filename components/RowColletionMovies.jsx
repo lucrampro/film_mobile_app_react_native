@@ -27,8 +27,13 @@ const RowColletionMovies = ({ title, id_collection }) => {
   );
 }
 const styles = StyleSheet.create({
+  row: {
+    marginBottom: 15,
+  },
   title: {
-    color: '#fff'
+    color: '#fff',
+    fontSize: 25,
+    marginBottom: 10,
   }
 })
 export default RowColletionMovies;
