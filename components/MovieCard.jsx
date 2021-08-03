@@ -4,7 +4,7 @@ import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
 const MovieCard = ({ img_path, title, navigation, movie_id }) => {
 
   const goToDetails = () => {
-    navigation.navigate('Details', { movie_id: movie_id });
+    navigation.navigate('Details', { movie_id: movie_id, movie_title: title });
   }
 
   return (

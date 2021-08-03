@@ -26,9 +26,7 @@ export default class Network {
   }
 
   getMovie(movie_id) {
-    this.axiosGetRequest(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${this.api_key}&language=fr`)
-      .then(response => {
-        console.log(response);
-      })
+    return this.axiosGetRequest(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${this.api_key}&language=fr`)
+      .then(response => response.data)
   }
 }

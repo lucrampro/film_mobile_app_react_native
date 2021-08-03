@@ -16,7 +16,19 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-          <Stack.Screen name="Details" component={Details} options={{ headerShown: false }} />
+           <Stack.Screen name="Details" component={Details} options={({ route }) => {
+             return {
+               title: route.params.movie_title,
+               headerStyle: {
+                backgroundColor: '#121212',
+              },
+               headerTintColor: '#fff',
+               headerTitleStyle: {
+                fontWeight: 'bold',
+                fontSize: 22
+              },
+             }
+           }} /> 
         </Stack.Navigator>
       </NavigationContainer>
       <StatusBar style="auto" />
