@@ -1,17 +1,23 @@
 import React from 'react';
-import { View, Image, Text, StyleSheet } from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-const MovieCard = ({ img_path, title }) => {
+const MovieCard = ({ img_path, title, navigation, movie_id }) => {
+
+  const goToDetails = () => {
+    navigation.navigate('Details', { movie_id: movie_id });
+  }
+
   return (
     <View style={styles.container}>
-      <Image
-        style={styles.img}
-        source={{
-          uri: `https://image.tmdb.org/t/p/w500/${img_path}`,
-        }}
-        />
-        <Text style={styles.title}>{title ? title : 'Default title'  }</Text>
-      {/* <Image uri={`https://image.tmdb.org/t/p/w500/${img_path}`} /> */}
+      <TouchableOpacity onPress={goToDetails} >
+        <Image
+          style={styles.img}
+          source={{
+            uri: `https://image.tmdb.org/t/p/w500/${img_path}`,
+          }}
+          />
+          <Text style={styles.title}>{title ? title : 'Default title'  }</Text>
+      </TouchableOpacity>
     </View>
   );
 }

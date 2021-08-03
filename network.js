@@ -11,7 +11,7 @@ export default class Network {
 
   getMoviesCollections() {
     return this.axiosGetRequest(`https://api.themoviedb.org/3/genre/movie/list?api_key=${this.api_key}&language=fr`)
-      .then( response => {
+      .then(response => {
         const genres = response.data.genres;
         return genres
       })
@@ -21,8 +21,6 @@ export default class Network {
     return this.axiosGetRequest(`https://api.themoviedb.org/3/discover/movie?api_key=${this.api_key}&with_genres=${movie_list_id}&language=fr`)
       .then(response => {
         const lists_movies = response.data.results;
-        console.log(lists_movies);
-        
         return lists_movies
       })
   }

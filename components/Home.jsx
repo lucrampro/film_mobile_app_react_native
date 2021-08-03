@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { View, FlatList, StyleSheet } from 'react-native';
 import { RowCollectionMovies } from './'
 import Network from '../network'
-const Home = () => {
+const Home = ({navigation}) => {
 
   const network = new Network();
   const [movieCollection, setmovieCollection] = useState([]);
@@ -13,7 +13,6 @@ const Home = () => {
       let value = await network.getMoviesCollections();
       setmovieCollection(value);
     })()
-    
   },[]);
 
 
@@ -21,7 +20,7 @@ const Home = () => {
     <View style={styles.wrapper}>
       <FlatList
         data={movieCollection}
-        renderItem={({item}) => <RowCollectionMovies title={item.name} id_collection={item.id}></RowCollectionMovies>}
+        renderItem={({item}) => <RowCollectionMovies title={item.name} id_collection={item.id} navigation={navigation}></RowCollectionMovies>}
         keyExtractor={(item,i) => i.toString()}
       />
     </View>
@@ -30,7 +29,8 @@ const Home = () => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    padding: 10
+    padding: 10,
+    backgroundColor: '#121212'
   }
 })
 

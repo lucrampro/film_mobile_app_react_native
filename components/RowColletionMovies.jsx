@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Text, FlatList } from 'react-native';
+import { View, StyleSheet, Text, FlatList  } from 'react-native';
 import { MovieCard } from './'
 import Network from '../network'
 
-const RowColletionMovies = ({ title, id_collection }) => {
+const RowColletionMovies = ({ title, id_collection , navigation}) => {
   const network = new Network();
   const [collectionMovie, setCollectionMovie] = useState([]);
   useEffect(() => {
@@ -19,8 +19,7 @@ const RowColletionMovies = ({ title, id_collection }) => {
       <FlatList
         horizontal={true}
         data={collectionMovie}
-        renderItem={({item}) => <MovieCard img_path={item.backdrop_path} title={item.title}/>}
-        // renderItem={({item}) => <Text style={styles.title}> {item.title}</Text>}
+        renderItem={({item}) =>  <MovieCard img_path={item.backdrop_path} title={item.title} navigation={navigation} movie_id={item.id}/>}
         keyExtractor={(item,i) => i.toString()}
       />
     </View>
