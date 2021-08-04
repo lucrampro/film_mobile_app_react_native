@@ -10,10 +10,9 @@ const Details = ({route}) => {
   useEffect(() => {
     (async ()=> {
       let value = await network.getMovie(movie_id);
-      console.log(value);
       
       setmovieInfos(value);
-    })()
+    })()    
   }, []);
 
   return (
@@ -53,7 +52,6 @@ const styles = StyleSheet.create({
   description: {
     color: '#ffffff',
     lineHeight: 22,
-    marginLeft: 10
   }
 })
 

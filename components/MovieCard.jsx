@@ -6,7 +6,6 @@ const MovieCard = ({ img_path, title, navigation, movie_id }) => {
   const goToDetails = () => {
     navigation.navigate('Details', { movie_id: movie_id, movie_title: title });
   }
-
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={goToDetails} >
@@ -27,8 +26,8 @@ const styles = StyleSheet.create({
     margin: 5,
   },
   img: {
-    width: 120,
-    height: 200,
+    width: 200,
+    height: 100,
     resizeMode: 'cover',
     marginBottom: 10,
     borderRadius: 5,
