@@ -29,11 +29,9 @@ const styles = StyleSheet.create({
   img: {
     width: 100,
     height: 50,
-    resizeMode: 'contain',
+    resizeMode: 'cover',
     marginBottom: 10,
     borderRadius: 5,
-    borderColor: '#ffffff',
-    borderWidth: 1,
     marginRight: 20
   },
   title: {
