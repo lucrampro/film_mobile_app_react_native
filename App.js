@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
-import { Home, Details } from './components'
+import { HomeScreen, Details, SearchScreen } from './components'
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -50,8 +50,8 @@ function Root () {
     }}
   >
     <Tab.Screen
-      name="Feed"
-      component={Home}
+      name="Home"
+      component={HomeScreen}
       options={{
         tabBarLabel: 'Home',
         tabBarIcon: ({ color, size }) => (
@@ -60,8 +60,8 @@ function Root () {
       }}
     />
     <Tab.Screen
-      name="Profile"
-      component={Home}
+      name="Search"
+      component={SearchScreen}
       options={{
         tabBarLabel: 'Recherche',
         tabBarIcon: ({ color, size }) => (

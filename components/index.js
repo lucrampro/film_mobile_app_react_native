@@ -1,4 +1,5 @@
-export { default as Home } from './Home'
+export { default as HomeScreen } from './HomeScreen'
+export { default as SearchScreen } from './SearchScreen'
 export { default as Details } from './Details'
 export { default as RowCollectionMovies } from './RowColletionMovies'
 export { default as MovieCard } from './MovieCard'

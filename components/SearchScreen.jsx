@@ -1,0 +1,28 @@
+import React from 'react';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+const SearchScreen = () => {
+  return (
+    <View style={styles.wrapper}>
+        <TextInput style={styles.input} placeholder="Rechercher un film..."/>
+        
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    backgroundColor: '#000000',
+    padding: 20
+  },
+
+  input: {
+    height: 30,
+    backgroundColor: '#ffffff',
+    padding: 5,
+  }
+})
+
+export default SearchScreen;

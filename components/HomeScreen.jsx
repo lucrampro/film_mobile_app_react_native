@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { ScrollView,View, FlatList, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
-import { RowCollectionMovies } from './'
+import { RowCollectionMovies } from '.'
 import Network from '../network'
-const Home = ({navigation}) => {
+const HomeScreen = ({navigation}) => {
 
   const network = new Network();
   const [movieCollection, setmovieCollection] = useState([]);
@@ -75,4 +75,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Home;
+export default HomeScreen;
