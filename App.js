@@ -3,24 +3,25 @@ import React from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
 import { Home, Details } from './components'
 
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 export default function App() {
-  const Stack = createNativeStackNavigator();
-  
   return (
 
     <SafeAreaView style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
+          <Stack.Screen name="Home" component={Root} options={{ headerShown: false }} />
            <Stack.Screen name="Details" component={Details} options={({ route }) => {
              return {
                title: route.params.movie_title,
                headerStyle: {
-                backgroundColor: '#121212',
+                backgroundColor: '#000000',
               },
                headerTintColor: '#fff',
                headerTitleStyle: {
@@ -36,10 +37,46 @@ export default function App() {
   );
 }
 
+function Root () {
+  return(
+    <Tab.Navigator
+    
+    screenOptions={{
+      tabBarActiveTintColor: '#E50914',
+      headerShown: false,
+      tabBarStyle: {
+        backgroundColor: '#000000'
+      }
+    }}
+  >
+    <Tab.Screen
+      name="Feed"
+      component={Home}
+      options={{
+        tabBarLabel: 'Home',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="home" color={color} size={size} />
+        ),
+      }}
+    />
+    <Tab.Screen
+      name="Profile"
+      component={Home}
+      options={{
+        tabBarLabel: 'Recherche',
+        tabBarIcon: ({ color, size }) => (
+          <MaterialCommunityIcons name="magnify" color={color} size={size} />
+        ),
+      }}
+    />
+  </Tab.Navigator>
+  )
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#121212',
+    backgroundColor: '#000000',
     padding: 25,
   },
 });

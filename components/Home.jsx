@@ -50,7 +50,7 @@ const Home = ({navigation}) => {
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: '#121212'
+    backgroundColor: '#000000'
   },
   wrapper_home_img: {
     marginBottom: 5,

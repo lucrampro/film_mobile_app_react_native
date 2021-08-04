@@ -33,7 +33,7 @@ const Details = ({route}) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#121212',
+    backgroundColor: '#000000',
     flex: 1
   },
   img: {
