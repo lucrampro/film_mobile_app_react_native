@@ -1,12 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput } from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { MovieRow } from './'
 
 const SearchScreen = () => {
   return (
     <View style={styles.wrapper}>
         <TextInput style={styles.input} placeholder="Rechercher un film..."/>
-        
+        <MovieRow/>
     </View>
   );
 }
