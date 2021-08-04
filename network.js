@@ -29,4 +29,11 @@ export default class Network {
     return this.axiosGetRequest(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${this.api_key}&language=fr`)
       .then(response => response.data)
   }
+
+  getMovieWithQuery(query) {
+    this.axiosGetRequest(`https://api.themoviedb.org/3/search/movie?api_key=${this.api_key}&language=fr&query=${query}&include_adult=false`)
+    .then(response => {
+      console.log(response.data);
+    })
+  }
 }
