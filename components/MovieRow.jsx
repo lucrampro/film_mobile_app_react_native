@@ -1,17 +1,22 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text } from 'react-native';
+import { View, Image, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const MovieRow = () => {
+const MovieRow = ({title, img_path, navigation, movie_id, movie_title}) => {
+
+  const goToDetails = () => {
+    navigation.navigate('Details', { movie_id: movie_id, movie_title: title });
+  }
   return (
-    <View style={styles.container}>
+    
+      <TouchableOpacity onPress={goToDetails} style={styles.container} >
         <Image
           style={styles.img}
           source={{
-            uri: `https://image.tmdb.org/t/p/w500/${'wwemzKWzjKYJFfCeiB57q3r4Bcm.png'}`,
+            uri: `https://image.tmdb.org/t/p/w500/${img_path}`,
           }}
         />
-        <Text style={styles.title}>Test </Text>
-    </View>
+        <Text style={styles.title}> {title} </Text>
+      </TouchableOpacity>
   );
 }
 

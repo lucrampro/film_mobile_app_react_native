@@ -31,9 +31,7 @@ export default class Network {
   }
 
   getMovieWithQuery(query) {
-    this.axiosGetRequest(`https://api.themoviedb.org/3/search/movie?api_key=${this.api_key}&language=fr&query=${query}&include_adult=false`)
-    .then(response => {
-      console.log(response.data);
-    })
+    return this.axiosGetRequest(`https://api.themoviedb.org/3/search/movie?api_key=${this.api_key}&language=fr&query=${query}&include_adult=false`)
+    .then(response => response.data.results)
   }
 }
