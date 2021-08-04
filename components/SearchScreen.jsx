@@ -12,8 +12,6 @@ const SearchScreen = ({navigation}) => {
   const onUserSearch = async value => {
     let movies_infos = value.length > 0 ? await network.getMovieWithQuery(value) : []
     setsearchMovieInfo(movies_infos);
-    console.log(navigation);
-    
   }
 
   return (
